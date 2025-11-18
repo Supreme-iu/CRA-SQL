@@ -1,0 +1,6 @@
+deepseekV3（deepseek-ai/DeepSeek-V3---671B）
+deepseekV2.5（deepseek-ai/DeepSeek-V2.5---236B）
+Qwen3-32B（Qwen/Qwen3-32B）----enable_thinking=False（close deepthinking）
+Qwen3-8B（Qwen/Qwen3-8B）----enable_thinking=False（close deepthinking）
+ChatGLM4-9B（THUDM/GLM-4-9B-0414）
+ChatGLM4-32B（THUDM/GLM-4-32B-0414）
