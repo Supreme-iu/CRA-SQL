@@ -11,24 +11,7 @@ print(overall_description)
 #Output: """
 
 
-# dummy_sql_prompt = """# the key is the table, the value is a dict which key is original column name and value is the column information including full name, column description, value_description and example values.
-# database_schema = {database_schema}
-#
-# # the key is the table, the value is the list of its counterpart primary keys
-# primary_keys = {primary_key_dic}
-#
-# # the key is the source column, the value is the target column referenced by foreign key relationship.
-# foreign_keys = {foreign_key_dic}
-#
-# question = "{question_prompt}"
-#
-# evidence = "{evidence}"
-#
-# def question_to_SQL(question):
-#   # DO NOT select more things other than what the question asks
-#   # Generate the SQL to answer the question considering database_schema, primary_keys and foreign_keys
-#   # Also consider the evidence when generating the SQL
-#   SQL = "SELECT """
+
 dummy_sql_prompt = """# Task: Convert natural language questions to accurate SQL queries for SQLite
 
 # Database Schema Documentation
@@ -164,35 +147,6 @@ schema = {schema}
 evidence = "{evidence}"
 SR =
 """
-
-
-
-# sr2sql = """# Understand the pandas-like SR first. Then convert the SR in to executable SQL based on the question, the schema, the evidence and the imported keywords.
-# # Notice the order of the action in SR may not same as the executable SQL. Ensure that the generated SQL begins with the "SELECT" keyword.
-# # Make sure the generated SQL is executable and can answer the question accurately according to the schema.
-# # Only select the thing that the question required. Do not select any non-requested stuff.
-# # You may need to look back to the column_description and schema to get the correct value used in the final SQL
-#
-# from CLAUSE_KEYWORDS import select, from, where, group by, order by, union, limit, having, distinct, as, between, like, all, on, partition by
-# from JOIN_KEYWORDS import inner join, left join
-# from WHERE_OPERATIONS import is, not, null, none, in, =, >, <, >=, <=, !=, <>
-# from DATE_OPERATIONS import now, curdate, strftime
-# from UNIT_OPERATIONS import -, +, *, /
-# from COND_OPERATIONS import and, or, case, iif
-# from SQL_OPERATIONS import avg, count, max, min, round, abs, sum, length, cast, substr, cast, instr
-# from ORDER_OPERATIONS import desc, asc
-#
-# column_description = {column_description}
-#
-# foreign_keys = {foreign_key_dic}
-#
-# question = {question}
-# schema = {schema}
-# evidence = "{evidence}"
-# SR = "{SR}"
-# Example = "{examples}"
-# SQL = ""
-# """
 
 sr2sql = """
 # Understand the pandas-like SR first. Then convert the SR into executable SQL based on:
